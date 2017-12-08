@@ -1,0 +1,6 @@
+framework module Pods_Filmici {
+  umbrella header "Pods-Filmici-umbrella.h"
+
+  export *
+  module * { export * }
+}

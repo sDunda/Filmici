@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MovieComments" representedClassName=".MovieComment" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MovieModel" inverseName="comment" inverseEntity="MovieModel" syncable="YES"/>
+    </entity>
+    <entity name="MovieList" representedClassName=".MovieList" syncable="YES">
+        <relationship name="movies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MovieModel" inverseName="movieList" inverseEntity="MovieModel" syncable="YES"/>
+    </entity>
+    <entity name="MovieModel" representedClassName=".MovieModel" syncable="YES">
+        <attribute name="reviewAuthorTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reviewDateTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleMovie" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="webLink" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MovieComments" inverseName="movie" inverseEntity="MovieComments" syncable="YES"/>
+        <relationship name="movieList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MovieList" inverseName="movies" inverseEntity="MovieList" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MovieList" positionX="-263" positionY="-54" width="128" height="58"/>
+        <element name="MovieModel" positionX="-54" positionY="-9" width="128" height="150"/>
+        <element name="MovieComments" positionX="-135" positionY="45" width="128" height="75"/>
+    </elements>
+</model>
